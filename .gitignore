@@ -5,4 +5,4 @@ node_modules/
 client/dist/bundle.js
 
 #ignore db config
-dbConfig.js
+dbConfiguration.js
