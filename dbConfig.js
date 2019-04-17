@@ -3,6 +3,7 @@ let options = {
     user: 'root',
     // password: 'Password1!',
     database: 'agents'
+    //this is a really obvious change
 }
 
 module.exports = options;
