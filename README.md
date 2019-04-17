@@ -1,12 +1,11 @@
 # Project Name
 
 > Agent Component
- - https://github.com/xillow-talk/steve-component-agent-contact
+ -  https://github.com/reallow-ghrsea/agent-contact-module
 
 ## Related Projects
 
-  - https://github.com/xillow-talk/john-sprague-component-home-value
-  - https://github.com/xillow-talk/leighton-component-photo-carousel
+  - https://github.com/reallow-ghrsea
 
 ## Usage
 
@@ -18,7 +17,7 @@
 3.5) log into your mysql (mysql -u root -p), and create the database 'agents'
 4) 'npm run faker' to seed fake data into mysql
 5) 'npm run start' to start server
-6) localhost:6969 is server to copy into browser
+6) localhost:8081 is server to copy into browser
 
 
 
