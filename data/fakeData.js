@@ -57,10 +57,10 @@ const createData = () => {
   };
 
   connection.query(`
-  DROP DATABASE IF EXISTS agents3;
-  CREATE DATABASE IF NOT EXISTS agents3;
+  DROP DATABASE IF EXISTS agents;
+  CREATE DATABASE IF NOT EXISTS agents;
 
-  USE agents3;
+  USE agents;
 
   CREATE TABLE listedAgent (
     id INT AUTO_INCREMENT,

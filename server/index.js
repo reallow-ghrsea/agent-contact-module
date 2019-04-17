@@ -3,8 +3,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('../data/db.js');
 
+
 const app = express();
 const PORT = 8081;
+
 
 app.use(express.static(path.resolve(__dirname, '../client/dist')));
 app.use(bodyParser.json());
@@ -21,7 +23,7 @@ app.get('/:houseId', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
 });
 
-app.get('/houseId/listedAgent/:houseId', (req, res) => {
+app.get('/houseId/listedAgent/:houseId',  (req, res) => {
   let houseId = req.params.houseId;
   db.getListedAgent(houseId, (err, data) => {
     if (err) {
