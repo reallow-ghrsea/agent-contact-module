@@ -18,15 +18,17 @@ const ListedAgent = ({ lAgent }) => {
   return (
     <AgentContainer>
       <div className="left">
-        <Radio type="radio"></Radio>
-        <Avatar src={lAgent.url}></Avatar>
+        <Radio type="radio" />
+        <Avatar src={lAgent.url} />
         <Infobox>
           <Name>{lAgent.name}</Name>
           <ReviewContainer>
             <span className="starContainer">
-              <Stars src="https://s3.amazonaws.com/xillowstars/stars.png" ></Stars>
+              {/* <Stars src="http://www.sclance.com/pngs/4-stars-png/4_stars_png_7911.png" /> */}
             </span>
-            <span>(<a className="reviewColor">{lAgent.reviews}</a>)</span>
+            <span>
+              (<a className="reviewColor">{lAgent.reviews}</a>)
+            </span>
           </ReviewContainer>
           <SalesContainer>
             <span className="salesCount">{lAgent.recentSales}</span>
@@ -37,8 +39,7 @@ const ListedAgent = ({ lAgent }) => {
       </div>
       <Badge>Listing Agent</Badge>
     </AgentContainer>
-
-  )
+  );
 }
 
 export default ListedAgent;

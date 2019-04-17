@@ -19,14 +19,16 @@ const PremierAgent = ({ pAgents }) => {
     <AgentContainer>
       <div className="left">
         <input type="radio" />
-        <Avatar src={pAgents.url}></Avatar>
+        <Avatar src={pAgents.url} />
         <Infobox>
           <Name>{pAgents.name}</Name>
           <ReviewContainer>
             <span className="starContainer">
-              <Stars src="https://s3.amazonaws.com/xillowstars/stars.png" ></Stars>
+              {/* <Stars src="http://www.sclance.com/pngs/4-stars-png/4_stars_png_7911.png" /> */}
             </span>
-            <span>(<a className="reviewColor">{pAgents.reviews}</a>)</span>
+            <span>
+              (<a className="reviewColor">{pAgents.reviews}</a>)
+            </span>
           </ReviewContainer>
           <SalesContainer>
             <span className="salesCount">{pAgents.recentSales}</span>
@@ -36,9 +38,8 @@ const PremierAgent = ({ pAgents }) => {
         </Infobox>
       </div>
       <Badge>Premier Agent</Badge>
-    </AgentContainer >
-
-  )
+    </AgentContainer>
+  );
 }
 
 export default PremierAgent;
