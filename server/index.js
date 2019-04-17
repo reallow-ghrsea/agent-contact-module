@@ -3,8 +3,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('../data/db.js');
 
-
-
 const app = express();
 const PORT = 8081;
 
@@ -18,6 +16,8 @@ app.use(function (req, res, next) {
 });
 
 // renders new html for unique house data
+
+//get requests
 app.get('/:houseId', (req, res) => {
   // let houseId = req.params.houseId;
 
@@ -44,6 +44,23 @@ app.get('/houseId/premierAgents', (req, res) => {
     }
   });
 });
+
+
+//post request
+
+// app.post('/addAgent/:houseId', {
+//   //data
+// }) 
+
+
+//patch/put
+
+
+//delete
+
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Hidey-Ho Cap'n, we are now serving on port ${PORT}!`);
