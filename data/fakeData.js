@@ -1,6 +1,8 @@
 const faker = require('faker');
 const mysql = require('mysql');
 
+const dbOptions = require('../dbConfig.js');
+
 
 const connection = mysql.createConnection({
   // host: 'agents3.csast8i0snkv.us-east-2.rds.amazonaws.com',

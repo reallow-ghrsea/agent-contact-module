@@ -1,11 +1,8 @@
 const mysql = require('mysql');
 
-const connection = mysql.createConnection({
-  // host: 'agents3.csast8i0snkv.us-east-2.rds.amazonaws.com',
-   user: 'root',
-  // password: 'Password1!',
-  database: 'agents'
-});
+const dbOptions = require('../dbConfig.js');
+
+const connection = mysql.createConnection(dbOptions);
 
 const random = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
