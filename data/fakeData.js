@@ -1,14 +1,10 @@
 const faker = require('faker');
 const mysql = require('mysql');
 
+const dbOptions = require('../dbConfiguration.js');
 
-const connection = mysql.createConnection({
-  host: 'agents3.csast8i0snkv.us-east-2.rds.amazonaws.com',
-  user: 'root',
-  password: 'Password1!',
-  database: 'agents3',
-  multipleStatements: true,
-});
+
+const connection = mysql.createConnection(dbOptions);
 
 connection.connect();
 
@@ -57,10 +53,10 @@ const createData = () => {
   };
 
   connection.query(`
-  DROP DATABASE IF EXISTS agents3;
-  CREATE DATABASE IF NOT EXISTS agents3;
+  DROP DATABASE IF EXISTS agents;
+  CREATE DATABASE IF NOT EXISTS agents;
 
-  USE agents3;
+  USE agents;
 
   CREATE TABLE listedAgent (
     id INT AUTO_INCREMENT,
