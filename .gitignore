@@ -6,3 +6,6 @@ client/dist/bundle.js
 
 #ignore db config
 dbConfiguration.js
+
+#ignore data
+*.csv

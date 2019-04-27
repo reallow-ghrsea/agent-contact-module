@@ -16,9 +16,14 @@ class AllAgents extends React.Component {
       pAgent0: {},
       pAgent1: {},
       pAgent2: {},
+      pAgent0ID: this.props.houseId + 1 || Math.floor(Math.random() * 1000),
+      pAgent1ID: this.props.houseId + 2 || Math.floor(Math.random() * 1000),
+      pAgent2ID: this.props.houseId + 3 || Math.floor(Math.random() * 1000),
     };
   }
   componentDidMount() {
+
+    //get listed agent
     axios.get(`/houseId/listedAgent/${this.props.houseId}`)
       .then(response => {
 
@@ -27,17 +32,36 @@ class AllAgents extends React.Component {
         const listAgent = response.data[0];
         this.setState({ lAgent: listAgent });
       });
-    axios.get(`/houseId/premierAgents`)
+    //get first premier agent
+    axios.get(`/houseId/premierAgents/${this.state.pAgent0ID}`)
       .then(response => {
-        const preAgent0 = response.data[0];
-        const preAgent1 = response.data[1];
-        const preAgent2 = response.data[2];
         this.setState({
-          pAgent0: preAgent0,
-          pAgent1: preAgent1,
-          pAgent2: preAgent2,
-        });
-      });
+          pAgent0: response.data[0]
+        })
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+    //get second premier agent
+    axios.get(`/houseId/premierAgents/${this.state.pAgent1ID}`)
+      .then(response => {
+        this.setState({
+          pAgent1: response.data[0]
+        })
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+    //get third premier agent
+    axios.get(`/houseId/premierAgents/${this.state.pAgent2ID}`)
+      .then(response => {
+        this.setState({
+          pAgent2: response.data[0]
+        })
+      })
+      .catch((e) => {
+        console.log(e)
+      })
   }
 
   render() {

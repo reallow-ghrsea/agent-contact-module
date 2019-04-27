@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const db = require('../data/db.js');
+const db = require('../data/dbpg.js');
 
 const app = express();
 const PORT = 8081;
@@ -25,22 +25,23 @@ app.get('/:houseId', (req, res) => {
 });
 
 app.get('/houseId/listedAgent/:houseId',  (req, res) => {
-  let houseId = req.params.houseId;
-  db.getListedAgent(houseId, (err, data) => {
+  //let houseId = req.params.houseId;
+  db.getListedAgent(req.params.houseId, (err, data) => {
     if (err) {
+      console.log(err);
       res.sendStatus(404);
     } else {
-      res.status(200).send(data);
+      res.status(200).send(data.rows);
     }
   });
 });
 
-app.get('/houseId/premierAgents', (req, res) => {
-  db.getPremierAgents((err, data) => {
+app.get('/houseId/premierAgents/:houseId', (req, res) => {
+  db.getPremierAgents(req.params.houseId, (err, data) => {
     if (err) {
       res.sendStatus(404);
     } else {
-      res.status(200).send(data);
+      res.status(200).send(data.rows);
     }
   });
 });
