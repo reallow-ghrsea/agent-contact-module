@@ -16,9 +16,9 @@ class AllAgents extends React.Component {
       pAgent0: {},
       pAgent1: {},
       pAgent2: {},
-      pAgent0ID: this.props.houseId + 1 || Math.floor(Math.random() * 1000),
-      pAgent1ID: this.props.houseId + 2 || Math.floor(Math.random() * 1000),
-      pAgent2ID: this.props.houseId + 3 || Math.floor(Math.random() * 1000),
+      pAgent0ID: Math.floor(Math.random() * 1000),
+      pAgent1ID: Math.floor(Math.random() * 1000),
+      pAgent2ID: Math.floor(Math.random() * 1000),
     };
   }
   componentDidMount() {

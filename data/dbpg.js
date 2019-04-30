@@ -15,7 +15,6 @@ function getListedAgent (houseId, cb) {
         if (err) {
             console.log(`ERROR GETTING LISTING AGENT DATA FROM DB`, err);
         } else {
-            console.log(data);
             cb(err, data);
         }
     })
@@ -26,7 +25,6 @@ function getPremierAgents (houseId, cb) {
         if (err) {
             console.log(`ERROR GETTING PREMIER AGENT DATA FROM DB`, err);
         } else {
-            console.log(data);
             cb(err, data);
         }
     })

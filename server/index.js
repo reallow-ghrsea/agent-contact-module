@@ -1,3 +1,4 @@
+require("newrelic");
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -19,13 +20,10 @@ app.use(function (req, res, next) {
 
 //get requests
 app.get('/:houseId', (req, res) => {
-  // let houseId = req.params.houseId;
-
   res.sendFile(path.resolve(__dirname + '/../client/dist/index.html'));
 });
 
-app.get('/houseId/listedAgent/:houseId',  (req, res) => {
-  //let houseId = req.params.houseId;
+app.get('/houseId/listedAgent/:houseId', (req, res) => {
   db.getListedAgent(req.params.houseId, (err, data) => {
     if (err) {
       console.log(err);
@@ -39,29 +37,13 @@ app.get('/houseId/listedAgent/:houseId',  (req, res) => {
 app.get('/houseId/premierAgents/:houseId', (req, res) => {
   db.getPremierAgents(req.params.houseId, (err, data) => {
     if (err) {
+      console.log(err);
       res.sendStatus(404);
     } else {
       res.status(200).send(data.rows);
     }
   });
 });
-
-
-//post request
-
-// app.post('/addAgent/:houseId', {
-//   //data
-// }) 
-
-
-//patch/put
-
-
-//delete
-
-
-
-
 
 app.listen(PORT, () => {
   console.log(`Hidey-Ho Cap'n, we are now serving on port ${PORT}!`);

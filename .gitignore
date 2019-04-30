@@ -9,3 +9,9 @@ dbConfiguration.js
 
 #ignore data
 *.csv
+
+#ignore artillery data
+test/stress/data
+
+#ignore newrelic info
+newrelic.js
