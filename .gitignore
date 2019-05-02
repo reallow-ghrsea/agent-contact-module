@@ -1,8 +1,6 @@
 #ignore node modules
 node_modules/
 
-# ignore bundles
-client/dist/bundle.js
 
 #ignore db config
 dbConfig_ref.js
