@@ -5,7 +5,7 @@ node_modules/
 client/dist/bundle.js
 
 #ignore db config
-dbConfiguration.js
+dbConfig_ref.js
 
 #ignore data
 *.csv
@@ -15,3 +15,6 @@ test/stress/data
 
 #ignore newrelic info
 newrelic.js
+
+#ignore newrelic log
+newrelic_agent.log
