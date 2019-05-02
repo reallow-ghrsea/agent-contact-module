@@ -1,10 +1,7 @@
 const { Client, Pool } = require('pg');
+const options = require('../dbConfig_ref');
 
-const client = new Pool({
-    user: 'rachaelotto',
-    database: 'agents',
-    port: 5432,
-});
+const client = new Pool(options);
 
 client.connect()
     .then (()=>console.log('connected to db'))
